@@ -1,44 +1,83 @@
-Employee Salary Classification Project
-This project focuses on building a machine learning model to predict whether an individual's income is greater than $50K or less than or equal to $50K based on demographic and employment information.
+# 🧠 Employee Salary Classification
 
-Dataset
-The project utilizes the Adult dataset, which contains various attributes about individuals, including:
+A machine learning project to predict whether an individual's income exceeds $50K/year based on demographic and employment attributes from the Adult Dataset.
 
-Age
-Workclass
-Education and Educational Number
-Marital Status
-Occupation
-Relationship
-Race
-Gender
-Capital Gain
-Capital Loss
-Hours per Week
-Native Country
-Income (the target variable: >50K or <=50K)
-Project Goals
-The main goals of this project are:
+---
 
-To preprocess the Adult dataset to make it suitable for machine learning.
-To train and evaluate several classification models to predict income level.
-To select the best-performing model.
-To deploy the model as a user-friendly web application for making predictions.
-Project Steps
-Data Loading and Initial Exploration: Load the dataset and perform initial checks for its structure, content, and missing values.
-Data Cleaning and Preprocessing: Handle missing values (specifically the '?' entries), remove unnecessary columns, and address outliers in numerical features. Categorical features are encoded into numerical formats, and numerical features are scaled.
-Model Selection and Training: Split the data into training and testing sets. Train various classification models including:
-K-Nearest Neighbors (KNN)
-Logistic Regression
-Support Vector Classifier (SVC)
-Random Forest Classifier
-Gradient Boosting Classifier
-MLP Classifier (Neural Network)
-Model Evaluation: Evaluate the performance of each trained model using metrics such as accuracy and the classification report (precision, recall, F1-score).
-Best Model Selection: Identify the model with the highest accuracy on the test set. The Gradient Boosting Classifier was found to be the best-performing model in this project.
-Model Saving: Save the trained best model (retrained_best_model.pkl) and the scaler (scaler_retrained.pkl) to disk for later use in the web application.
-Streamlit Web Application Development: Create an interactive web application (app.py) using Streamlit. This application allows users to input employee details and get a salary class prediction. It also includes functionality for batch predictions via CSV upload.
-Deployment using ngrok: Use ngrok to create a public tunnel to the local Streamlit application, making it accessible from anywhere with an internet connection.
-Results
-The evaluation of the models showed that the Gradient Boosting Classifier achieved the highest accuracy of approximately 0.8722 on the test set.
-Run the Streamlit App : https://e61718c1b6c6.ngrok-free.app
+## 📁 Dataset
+
+Features:
+- Age  
+- Workclass  
+- Education / Education-Num  
+- Marital Status  
+- Occupation  
+- Relationship  
+- Race  
+- Gender  
+- Capital Gain / Loss  
+- Hours per Week  
+- Native Country  
+- **Income** (target variable: `>50K` or `<=50K`)
+
+---
+
+## 🎯 Objectives
+
+- Clean and preprocess dataset for ML  
+- Train various classification models  
+- Evaluate model performance and metrics  
+- Save and deploy best model via web interface
+
+---
+
+## 🔧 Project Workflow
+
+### 1️⃣ Data Preprocessing
+- Replace `?` with NaN and drop missing rows  
+- Encode categorical features using LabelEncoder  
+- Scale numerical features using MinMaxScaler  
+
+### 2️⃣ Model Training & Evaluation
+Models used:
+- K-Nearest Neighbors (KNN)  
+- Logistic Regression  
+- Support Vector Classifier (SVC)  
+- Random Forest  
+- Gradient Boosting  
+- MLP Classifier (Neural Network)
+
+> ✅ **Best-performing model**: Gradient Boosting (Accuracy ≈ 87.22%)
+
+### 3️⃣ Saving Model
+- Saved trained model: `retrained_best_model.pkl`  
+- Saved scaler: `scaler_retrained.pkl`
+
+---
+
+## 🌐 Streamlit Web Application
+
+### Features:
+- Interactive form-based input for individual prediction  
+- Batch predictions from uploaded CSV file  
+- Displays prediction results and confidence scores
+
+### Deployment:
+- Hosted locally using Streamlit  
+- Shared publicly using **ngrok**
+
+---
+
+## 📊 Results
+- Gradient Boosting Classifier achieved highest accuracy (~87.22%)  
+- Robust and responsive UI supports both real-time and batch predictions  
+- Project ready for deployment and further enhancement
+
+---
+## 🚀 Access the Web App
+
+You can try the Employee Salary Classification tool online via the Streamlit interface:  
+🔗 https://e61718c1b6c6.ngrok-free.app
+
+> Note: This app is hosted locally via Streamlit and made publicly available using ngrok. The URL may change each time the server restarts.
+
